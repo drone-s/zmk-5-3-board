@@ -1,1 +1,33 @@
+/ {
+    // Matrix configuration for a 3x5 layout
+    zmk,kscan {
+        label = "KS"; 
+        compatible = "zmk,kscan-gpio-matrix";
+        row-gpios = <&gpio0 3 0>, <&gpio0 2 0>, <&gpio0 0 0>, <&gpio0 1 0>;
+        col-gpios = <&gpio1 8 0>, <&gpio1 7 0>, <&gpio16 0>, <&gpio1 5 0>, <&gpio1 4 0>;
+    };
+
+    // Rotary encoder definitions for 3 knobs
+    my_encoders {
+        compatible = "zmk,encoder";
+        encoder1 {
+            label = "ENC1";
+            pin-a = <&gpio0 13 GPIO_ACTIVE_LOW>;
+            pin-b = <&gpio0 14 GPIO_ACTIVE_LOW>;
+            click-gpio = <&gpio0 4 GPIO_ACTIVE_LOW>;
+        };
+        encoder2 {
+            label = "ENC2";
+            pin-a = <&gpio0 15 GPIO_ACTIVE_LOW>;
+            pin-b = <&gpio0 16 GPIO_ACTIVE_LOW>;
+            click-gpio = <&gpio0 7 GPIO_ACTIVE_LOW>;
+        };
+        encoder3 {
+            label = "ENC3";
+            pin-a = <&gpio0 17 GPIO_ACTIVE_LOW>;
+            pin-b = <&gpio0 18 GPIO_ACTIVE_LOW>;
+            click-gpio = <&gpio0 10 GPIO_ACTIVE_LOW>;
+        };
+    };
+};
 
